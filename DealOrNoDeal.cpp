@@ -19,7 +19,7 @@ void randomShuffleArray(){
     srand(time(0));                                 //  Makes the shuffle totally random.
     random_shuffle((begin(cases)), end(cases));     //  Saves the file totally random array into cases.
 }
-
+    
 void showCasesNumberWise(){
     int numOfCases = 26;
     for(int i = 0; i < numOfCases; i++){
