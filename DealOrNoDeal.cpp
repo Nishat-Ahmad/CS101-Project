@@ -1,10 +1,14 @@
 #include<iostream>
 #include<algorithm>
 #include<ctime>
+#include<list>
 
 using namespace std;
+
 /*
 ToDo:
+#. Add bankers functionality.
+
 1. Have 6 increases of 7 percent
 2. Add the rules in UserInterface.h
 3. Change name to .h.
@@ -14,7 +18,9 @@ ToDo:
 extern int earnings;
 
 double cases[26] = {0.01, 1, 5, 10, 25, 50, 75, 100, 200, 300, 400, 500, 750,
-                    1000, 5000, 10000, 25000, 50000, 75000, 100000, 200000, 300000, 400000, 500000, 750000, 999999};
+                    1000, 5000, 10000, 25000, 50000, 75000, 100000, 200000, 300000,
+                    400000, 500000, 750000, 999999};
+int numOfOpening[8] = {7, 5, 4, 3, 2, 2, 1, 1};
 
 //  Shuffles cases.
 void randomShuffleArray(){
@@ -22,29 +28,8 @@ void randomShuffleArray(){
     random_shuffle((begin(cases)), end(cases));     //  Saves the file totally random array into cases.
 }
 
-//  Shows the Cases left.
-void showCasesNumberWise(int &PlayerCase){
-    int caseNumber = 0;
-
-    cout << "Cases left to be open" << endl;
-    for(int i = 0; i < 5; i++){
-        for(int j = 0; j < 5; j++){
-            caseNumber++;
-            //  cout << cases[caseNumber];
-            if(caseNumber == PlayerCase){
-                cout << caseNumber + 1 << " ";
-                caseNumber++;
-                continue;
-            }
-            cout << caseNumber << " ";
-        }
-        cout << endl;
-    }
-    cout << endl;
-}
-
 //  Lets player choose a case.
-void choosePlayerCase(int &PlayerCase){
+int choosePlayerCase(int &PlayerCase){
     do{
         cout << endl << "Choose one of the cases [You can choose from 1 - 26]: ";
         cin >> PlayerCase;
@@ -52,21 +37,79 @@ void choosePlayerCase(int &PlayerCase){
             cout << "Value choose out of bound." << endl;
         }
     }while(PlayerCase < 1 || PlayerCase > 26);
+    return cases[PlayerCase];
 }
 
-void playGame(){
+void playGame(int &playerCase){
+    list<int> PlayerChoiceForCaseList;
+    int PlayerChoiceForCase;
+    bool checker;
 
+    PlayerChoiceForCaseList.push_back(playerCase);
+    cases[playerCase - 1] = -1;
+    
+    for(int i = 0; i < 8; i++){
+        for(int j = numOfOpening[i]; j >= 1; j--){
+            cout << endl << "You have " << j << " cases left to open before bankers offer." << endl;
+
+            //  Checks if the case choosen by the player is already opened.
+            cout << "Choose a case to open: ";
+
+            //  Checks if the case that the player chose has already been opened or not.
+            do{
+                cin >> PlayerChoiceForCase;
+                checker = true;
+                //  Checks if the case is already opened.
+                if (find(PlayerChoiceForCaseList.begin(), PlayerChoiceForCaseList.end(), PlayerChoiceForCase) != PlayerChoiceForCaseList.end()) {
+                    cout << "You already choose this case." << endl;
+                    cout << "Choose another case to open: ";
+                    checker = false;
+                    continue;
+                }
+                //  Checks if the case trying to be opened is out of bound or not.
+                if(PlayerChoiceForCase < 1 || PlayerChoiceForCase > 26){
+                    cout << "Value choose out of bound." << endl;
+                    cout << "Choose another case to open: ";
+                    checker = false;
+                    continue;
+                }
+                PlayerChoiceForCaseList.push_back(PlayerChoiceForCase);
+            } while (!checker);
+
+            cout << "----------------------------------------" << endl;
+            cout << "The case you choose had : $" << cases[PlayerChoiceForCase - 1] << endl;
+            cases[PlayerChoiceForCase - 1] = -1;
+            cout << "----------------------------------------" << endl;
+
+            int caseNumber = 0;
+
+            //  Prints the cases left to be opened.
+            cout << "Cases left to be open" << endl;
+            for(int i = 0; i < 5; i++){
+                cout << endl;
+                for(int j = 0; j < 5; j++){
+                    caseNumber++;
+                    if(find(PlayerChoiceForCaseList.begin(), PlayerChoiceForCaseList.end(), caseNumber) != PlayerChoiceForCaseList.end()){
+                        continue;
+                    }
+                    cout << caseNumber << " ";
+                }
+            }
+            if(find(PlayerChoiceForCaseList.begin(), PlayerChoiceForCaseList.end(), 26) == PlayerChoiceForCaseList.end()){
+                cout << 26 << endl;
+            }
+            cout << "----------------------------------------" << endl;
+        }
+    }
 }
 
-void banker(){
-    int numOfOpening[6] = {7, 5, 4, 3, 2, 1};
-}
+void banker(){}
 
 int main(){
     int PlayerCase;
+    int playerCaseValue;
 
     randomShuffleArray();
-    choosePlayerCase(PlayerCase);
-    showCasesNumberWise(PlayerCase);
-
+    playerCaseValue = choosePlayerCase(PlayerCase);
+    playGame(PlayerCase);
 }
