@@ -50,7 +50,7 @@ Upon starting the program, you will be presented with a main menu where you can 
 Detailed rules for each game can be accessed within the program by choosing the appropriate options in the main menu.
 
 ## Authors
-**HassanIqbal715** wrote _nearly_ all of the **BlackJack.h**, **AhmadSaeedZaidi** wrote _nearly_ all of the **Baccarat.h** and **SlotMachine.h**. While **Nishat-Ahmad** wrote main.cpp, UserInterface.h and DealOrNoDeal.h, while also making changes to HassanIqbal715 and AhmadSaeedZaidis work so that all of the code can work together.
+**HassanIqbal715** wrote **BlackJack.h**, **AhmadSaeedZaidi** wrote **Baccarat.h** and **SlotMachine.h**. While **Nishat-Ahmad** wrote main.cpp, UserInterface.h and DealOrNoDeal.h, while also making changes to HassanIqbal715 and AhmadSaeedZaidis work so that all of the code can work together.
 
 ## Intent
 It was the final project for our first CS101 : Computer Programming course.
