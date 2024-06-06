@@ -2,7 +2,7 @@
 #include<algorithm>
 #include<ctime>
 #include<list>
-#include"BlackJack.h"
+//  #include"BlackJack.h"
 
 #include <iomanip>
 
@@ -33,8 +33,6 @@ void randomShuffleArray(){
 
 //  Lets player choose a case.
 int choosePlayerCase(int &PlayerCase){
-    system("CLS");
-
     do{
         cout << endl << "Choose one of the cases [You can choose from 1 - 26]: ";
         cin >> PlayerCase;

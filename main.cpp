@@ -4,9 +4,10 @@
 #include <string>
 #include <windows.h>
 
+#include "DealOrNoDeal.h"
 #include "BlackJack.h"
 #include "SlotMachine.h"
-#include "Baccarat.h" 
+#include "Baccarat.h"
 #include "UserInterface.h"
 
 using namespace std;
@@ -51,6 +52,11 @@ int main(){
             case 3:
                 baccaratRules();
                 Baccarat();
+                break;
+            case 4:
+                system("CLS");
+                DealOrNoDealRules();
+                dealOrNoDeal();
                 break;
             default:
                 cout << "Not a valid option." << endl;
