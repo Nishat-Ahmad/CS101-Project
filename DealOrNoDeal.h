@@ -8,13 +8,6 @@
 
 using namespace std;
 
-/*
-ToDo:
-3. Change name to .h // Delete the .exe before hand,
-4. Force GPT to make your code better 
-5. Add a README.md, make chatgpt do it?
-*/
-
 //	Adding external variable from "BlackJack.h".
 extern int earnings;
 
