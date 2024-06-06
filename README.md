@@ -1,7 +1,7 @@
 # Casino
 
 ## Overview
-This project consists of multiple casino games, including Blackjack, Baccarat, Slot Machine, and Deal or No Deal. The games are implemented in C++ and provide a console-based interface for users to interact with. The starting balance for the player is $10,000. The goal is to enjoy the games and manage your earnings effectively.
+This project consists of multiple casino games, including Blackjack, Baccarat, Slot Machine, and Deal or No Deal. The games are implemented in C++ and provide a console-based interface for users to interact with. The starting balance for the player is $10,000. The goal is to manage your earnings effectively.
 
 ## Files and Structure
 - `main.cpp`: This is the entry point of the application where the user is prompted to choose a game to play.
@@ -13,19 +13,6 @@ This project consists of multiple casino games, including Blackjack, Baccarat, S
 
 ## Dependencies
 - C++ standard libraries: `<iostream>`, `<cstdlib>`, `<ctime>`, `<string>`, `<windows.h>`, `<algorithm>`, `<list>`, `<iomanip>`
-
-## Getting Started
-1. **Compile the Program**:
-    Make sure you have a C++ compiler installed. Use the following command to compile the code:
-    ```sh
-    g++ main.cpp -o CasinoGame
-    ```
-
-2. **Run the Program**:
-    After compilation, run the executable:
-    ```sh
-    ./CasinoGame
-    ```
 
 ## How to Play
 
@@ -59,13 +46,10 @@ Upon starting the program, you will be presented with a main menu where you can 
 3. Receive offers from the banker and decide whether to accept the deal or continue opening cases.
 4. The game continues until you either accept an offer or all cases are opened.
 
-## External Variables
-- `int earnings`: Shared across all games to track the player's total cash.
-
 ## Game Rules
 Detailed rules for each game can be accessed within the program by choosing the appropriate options in the main menu.
 
 ## Authors
-This project was implemented as a console-based casino game simulation using C++. Feel free to contribute or provide feedback to improve the game.
+@HassanIqbal715 wrote
 
 Enjoy playing!
