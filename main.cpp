@@ -28,6 +28,7 @@ int main(){
         cout << endl << "Enter 1 to play Black Jack." << endl;
         cout << "Enter 2 to play Slot machine." << endl;
         cout << "Enter 3 to play Bacarrats." << endl;
+        cout << "Enter 4 to play deal or no deal." << endl;
         cout << "Enter 0 to exit." << endl;
         cout << "Choice:    ";
 

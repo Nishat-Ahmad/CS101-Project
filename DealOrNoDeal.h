@@ -288,7 +288,7 @@ void gameController(int &playerCase){
     }
 }
 
-int main(){   
+int dealOrNoDeal(){
     int PlayerCase;
     int playerCaseValue;
 

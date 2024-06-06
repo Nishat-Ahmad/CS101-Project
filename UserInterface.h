@@ -48,4 +48,12 @@ void baccaratRules(){
 void DealOrNoDealRules(){
     cout << "Rules for Deal or no deal." << endl;
     cout << "1. The Player will be asked to choose from 26 boxes, they have to pick one box. " << endl;
+    cout << "2. This box can only be swapped with the last box, so choose wisely." << endl;
+    cout << "3. The the player has to keep on opening boxes till they reach the next dealer offer." << endl;
+    cout << "4. The player has to try and open only the lowest value cases." << endl;
+    cout << "5. The dealer will make a random offer, if the player choose the offer they " << endl;
+    cout << "   loose all the boxes and will earn the money that the dealer has offered." << endl;
+    cout << "6. If they say no, the game will continue till the next dealer offer or swap offer." << endl;
+    cout << "7. When the player swaps their box, they now own the money in the other box rather than the one they have." << endl;
+    cout << "8. Enjoy :)" << endl;
 }
