@@ -44,3 +44,8 @@ void baccaratRules(){
 	cout << "5. If sum is larger than 10, than the first number is deleted." << endl;
 	cout << "6. Person with the highest score wins." << endl;
 }
+
+void DealOrNoDealRules(){
+    cout << "Rules for Deal or no deal." << endl;
+    cout << "1. The Player will be asked to choose from 26 boxes, they have to pick one box. " << endl;
+}

@@ -10,7 +10,7 @@ bool finish = false;				//controls when the code ends
 int player_total, opponent_starting, starting_cards, opponent_total, count;
 int bet, earnings = 10000;			//providing an initial value of earnings so the game can be started
 bool point = false;					//acts as a switch for the loop
-char gameController = 'y';
+char gameControllerVariable = 'y';
 
 int player_card(){
 	int card;
@@ -146,12 +146,11 @@ void blackJack(){
         }
 		
 		cout<<"\nWould you like to continue with black jack?(Y/N)"<<endl;
-		cin>>gameController;
+		cin>>gameControllerVariable;
 		
 		::count = 0;
 		point = false;
 		finish = false;
 
-		
-	} while(gameController == 'Y' || gameController == 'y');
+	} while(gameControllerVariable == 'Y' || gameControllerVariable == 'y');
 }
