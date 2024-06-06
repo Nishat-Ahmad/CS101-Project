@@ -50,6 +50,6 @@ Upon starting the program, you will be presented with a main menu where you can 
 Detailed rules for each game can be accessed within the program by choosing the appropriate options in the main menu.
 
 ## Authors
-@HassanIqbal715 wrote
+@HassanIqbal715(https://github.com/HassanIqbal715) wrote
 
 Enjoy playing!
